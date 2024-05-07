@@ -1,5 +1,3 @@
-import '@/styles/index.css'
-
 import type { Metadata, Viewport } from 'next'
 import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
@@ -47,7 +45,7 @@ export default async function IndexRoute({
 }) {
   return (
     <>
-      <div className="flex min-h-screen flex-col bg-white text-black">
+      <div className="flex min-h-screen flex-col">
         {/* <Suspense>
           <Navbar />
         </Suspense> */}
