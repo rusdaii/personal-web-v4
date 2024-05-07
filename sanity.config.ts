@@ -10,9 +10,7 @@ import { structureTool } from 'sanity/structure'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 
 import { apiVersion, dataset, projectId, studioUrl } from '@/sanity/lib/api'
-import { locate } from '@/sanity/plugins/locate'
 import { pageStructure, singletonPlugin } from '@/sanity/plugins/settings'
-import page from '@/sanity/schemas/documents/page'
 import project from '@/sanity/schemas/documents/project'
 import duration from '@/sanity/schemas/objects/duration'
 import milestone from '@/sanity/schemas/objects/milestone'
@@ -37,7 +35,6 @@ export default defineConfig({
       settings,
       // Documents
       duration,
-      page,
       project,
       // Objects
       milestone,
@@ -49,7 +46,6 @@ export default defineConfig({
       structure: pageStructure([home, settings]),
     }),
     presentationTool({
-      locate,
       previewUrl: {
         previewMode: {
           enable: '/api/draft',
