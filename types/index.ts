@@ -30,6 +30,11 @@ export interface HomePagePayload {
   title?: string
 }
 
+export interface AboutPagePayload {
+  overview?: PortableTextBlock[]
+  title?: string
+}
+
 export interface ProjectPayload {
   client?: string
   coverImage?: Image

@@ -5,12 +5,18 @@ import { draftMode } from 'next/headers'
 
 import { client } from '@/sanity/lib/client'
 import {
+  aboutPageQuery,
   homePageQuery,
   projectBySlugQuery,
   settingsQuery,
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
-import { HomePagePayload, ProjectPayload, SettingsPayload } from '@/types'
+import {
+  AboutPagePayload,
+  HomePagePayload,
+  ProjectPayload,
+  SettingsPayload,
+} from '@/types'
 
 const serverClient = client.withConfig({
   token,
@@ -60,7 +66,7 @@ export function loadSettings() {
   return loadQuery<SettingsPayload>(
     settingsQuery,
     {},
-    { next: { tags: ['settings', 'home', 'page', 'project'] } },
+    { next: { tags: ['settings', 'home', 'about', 'project'] } },
   )
 }
 
@@ -69,6 +75,14 @@ export function loadHomePage() {
     homePageQuery,
     {},
     { next: { tags: ['home', 'project'] } },
+  )
+}
+
+export function loadAboutPage() {
+  return loadQuery<AboutPagePayload | null>(
+    aboutPageQuery,
+    {},
+    { next: { tags: ['about'] } },
   )
 }
 
