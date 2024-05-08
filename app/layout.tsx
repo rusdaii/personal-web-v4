@@ -1,15 +1,15 @@
-import '../styles/globals.css'
+import '@/styles/globals.css';
 
-import { GeistSans } from 'geist/font/sans'
+import { GeistSans } from 'geist/font/sans';
 
-import Providers from '@/components/global/Providers'
-import { Toaster } from '@/components/ui/sonner'
-import { cn } from '@/lib/utils'
+import Providers from '@/components/global/Providers';
+import { Toaster } from '@/components/ui/sonner';
+import { cn } from '@/lib/utils';
 
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html
@@ -22,5 +22,5 @@ export default async function RootLayout({
         <Toaster />
       </body>
     </html>
-  )
+  );
 }

@@ -1,19 +1,20 @@
-'use client'
+'use client';
 
-import { Devices, Moon, Sun } from '@styled-icons/boxicons-regular'
-import { useTheme } from 'next-themes'
-import * as React from 'react'
+import * as React from 'react';
 
-import { Button } from '@/components/ui/button'
+import { Devices, Moon, Sun } from '@styled-icons/boxicons-regular';
+import { useTheme } from 'next-themes';
+
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '@/components/ui/dropdown-menu';
 
 const ThemeSwitch = () => {
-  const { setTheme } = useTheme()
+  const { setTheme } = useTheme();
 
   return (
     <DropdownMenu>
@@ -42,7 +43,7 @@ const ThemeSwitch = () => {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
+  );
+};
 
-export default ThemeSwitch
+export default ThemeSwitch;

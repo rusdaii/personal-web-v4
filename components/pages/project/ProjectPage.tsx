@@ -1,10 +1,10 @@
-import type { EncodeDataAttributeCallback } from '@sanity/react-loader'
-import Link from 'next/link'
+import type { EncodeDataAttributeCallback } from '@sanity/react-loader';
+import Link from 'next/link';
 
-import { CustomPortableText } from '@/components/shared/CustomPortableText'
-import { Header } from '@/components/shared/Header'
-import ImageBox from '@/components/shared/ImageBox'
-import type { ProjectPayload } from '@/types'
+import { CustomPortableText } from '@/components/shared/CustomPortableText';
+import { Header } from '@/components/shared/Header';
+import ImageBox from '@/components/shared/ImageBox';
+import type { ProjectPayload } from '@/types';
 
 export interface ProjectPageProps {
   data: ProjectPayload | null
@@ -22,10 +22,10 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
     site,
     tags,
     title,
-  } = data ?? {}
+  } = data ?? {};
 
-  const startYear = new Date(duration?.start!).getFullYear()
-  const endYear = duration?.end ? new Date(duration?.end).getFullYear() : 'Now'
+  const startYear = new Date(duration?.start!).getFullYear();
+  const endYear = duration?.end ? new Date(duration?.end).getFullYear() : 'Now';
 
   return (
     <div>
@@ -108,7 +108,7 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
       </div>
       <div className="absolute left-0 w-screen border-t" />
     </div>
-  )
+  );
 }
 
-export default ProjectPage
+export default ProjectPage;

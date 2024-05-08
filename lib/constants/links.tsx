@@ -1,5 +1,5 @@
-import { CodeAlt } from '@styled-icons/boxicons-regular'
-import { BookIcon, HomeIcon, UserIcon } from 'lucide-react'
+import { CodeAlt } from '@styled-icons/boxicons-regular';
+import { BookIcon, HomeIcon, UserIcon } from 'lucide-react';
 
 type NavigationLinks = Array<{
   icon: React.ReactNode
@@ -28,4 +28,4 @@ export const NAVIGATION_LINKS: NavigationLinks = [
     href: '/about',
     text: 'About',
   },
-]
+];

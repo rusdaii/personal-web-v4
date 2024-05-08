@@ -1,20 +1,20 @@
-import { Metadata } from 'next'
-import { draftMode } from 'next/headers'
-import { notFound } from 'next/navigation'
-import { toPlainText } from 'next-sanity'
+import { Metadata } from 'next';
+import { draftMode } from 'next/headers';
+import { notFound } from 'next/navigation';
+import { toPlainText } from 'next-sanity';
 
-import AboutPage from '@/components/pages/about/AboutPage'
-import AboutPagePreview from '@/components/pages/about/AboutPagePreview'
-import { urlForOpenGraphImage } from '@/sanity/lib/utils'
-import { loadAboutPage, loadSettings } from '@/sanity/loader/loadQuery'
+import AboutPage from '@/components/pages/about/AboutPage';
+import AboutPagePreview from '@/components/pages/about/AboutPagePreview';
+import { urlForOpenGraphImage } from '@/sanity/lib/utils';
+import { loadAboutPage, loadSettings } from '@/sanity/loader/loadQuery';
 
 export const generateMetadata = async (): Promise<Metadata> => {
   const [{ data: settings }, { data: aboutPage }] = await Promise.all([
     loadSettings(),
     loadAboutPage(),
-  ])
+  ]);
 
-  const ogImage = urlForOpenGraphImage(settings?.ogImage)
+  const ogImage = urlForOpenGraphImage(settings?.ogImage);
 
   return {
     title: aboutPage?.title
@@ -29,21 +29,21 @@ export const generateMetadata = async (): Promise<Metadata> => {
     openGraph: {
       images: ogImage ? [ogImage] : [],
     },
-  }
-}
+  };
+};
 
 const AboutRoute = async () => {
-  const initial = await loadAboutPage()
+  const initial = await loadAboutPage();
 
   if (draftMode().isEnabled) {
-    return <AboutPagePreview initial={initial} />
+    return <AboutPagePreview initial={initial} />;
   }
 
   if (!initial.data) {
-    notFound()
+    notFound();
   }
 
-  return <AboutPage data={initial.data} />
-}
+  return <AboutPage data={initial.data} />;
+};
 
-export default AboutRoute
+export default AboutRoute;

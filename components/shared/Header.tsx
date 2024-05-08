@@ -1,4 +1,4 @@
-import { CustomPortableText } from '@/components/shared/CustomPortableText'
+import { CustomPortableText } from '@/components/shared/CustomPortableText';
 
 interface HeaderProps {
   centered?: boolean
@@ -6,9 +6,9 @@ interface HeaderProps {
   title?: string
 }
 export function Header(props: HeaderProps) {
-  const { title, description, centered = false } = props
+  const { title, description, centered = false } = props;
   if (!description && !title) {
-    return null
+    return null;
   }
   return (
     <div className={`${centered ? 'text-center' : 'w-5/6 lg:w-3/5'}`}>
@@ -25,5 +25,5 @@ export function Header(props: HeaderProps) {
         </div>
       )}
     </div>
-  )
+  );
 }

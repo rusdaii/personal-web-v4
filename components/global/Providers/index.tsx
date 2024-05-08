@@ -1,11 +1,11 @@
-'use client'
-import { ThemeProvider as NextThemesProvider } from 'next-themes'
-import { type ThemeProviderProps } from 'next-themes/dist/types'
-import React from 'react'
+'use client';
+import React from 'react';
+
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
 type ProvidersProps = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 const Providers: React.FC<ProvidersProps> = ({ children }) => {
   return (
@@ -17,7 +17,7 @@ const Providers: React.FC<ProvidersProps> = ({ children }) => {
     >
       {children}
     </NextThemesProvider>
-  )
-}
+  );
+};
 
-export default Providers
+export default Providers;

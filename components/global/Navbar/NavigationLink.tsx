@@ -1,17 +1,17 @@
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-import { NAVIGATION_LINKS } from '@/lib/constants/links'
-import { cn } from '@/lib/utils'
+import { NAVIGATION_LINKS } from '@/lib/constants/links';
+import { cn } from '@/lib/utils';
 
 const NavigationLink = () => {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <nav>
       <ul className="hidden space-x-2 md:flex">
         {NAVIGATION_LINKS.map((link) => {
-          const isActive = link.href === pathname
+          const isActive = link.href === pathname;
           return (
             <li
               key={link.text}
@@ -38,11 +38,11 @@ const NavigationLink = () => {
                 </>
               )}
             </li>
-          )
+          );
         })}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default NavigationLink
+export default NavigationLink;

@@ -1,13 +1,13 @@
-'use client'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
+'use client';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
-import { Separator } from '@/components/ui/separator'
+import ThemeSwitch from '@/components/global/ThemeSwitch';
+import { Separator } from '@/components/ui/separator';
 
-import ThemeSwitch from '../ThemeSwitch'
-import CommandMenu from './CommandMenu'
-import MobileNav from './MobileNav'
-import NavigationLink from './NavigationLink'
+import CommandMenu from './CommandMenu';
+import MobileNav from './MobileNav';
+import NavigationLink from './NavigationLink';
 
 const Navbar = () => {
   return (
@@ -34,7 +34,7 @@ const Navbar = () => {
         </div>
       </div>
     </motion.header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

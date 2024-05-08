@@ -1,14 +1,14 @@
-import { Menu } from '@styled-icons/boxicons-regular'
-import Link from 'next/link'
+import { Menu } from '@styled-icons/boxicons-regular';
+import Link from 'next/link';
 
-import { Button } from '@/components/ui/button'
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { NAVIGATION_LINKS } from '@/lib/constants/links'
+} from '@/components/ui/dropdown-menu';
+import { NAVIGATION_LINKS } from '@/lib/constants/links';
 
 const MobileNav = () => {
   return (
@@ -35,7 +35,7 @@ const MobileNav = () => {
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
+  );
+};
 
-export default MobileNav
+export default MobileNav;

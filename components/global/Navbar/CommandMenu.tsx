@@ -1,8 +1,9 @@
-import { Github, Linkedin, Twitter } from '@styled-icons/boxicons-logos'
-import { Command, Link } from '@styled-icons/boxicons-regular'
-import React from 'react'
+import React from 'react';
 
-import { Button } from '@/components/ui/button'
+import { Github, Linkedin, Twitter } from '@styled-icons/boxicons-logos';
+import { Command, Link } from '@styled-icons/boxicons-regular';
+
+import { Button } from '@/components/ui/button';
 import {
   CommandDialog,
   CommandEmpty,
@@ -11,37 +12,37 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from '@/components/ui/command'
-import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'
+} from '@/components/ui/command';
+import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
 
 type Groups = Array<{
-  name: string
+  name: string;
   actions: Array<{
-    title: string
-    icon: React.ReactNode
-    onSelect: () => void | Promise<void>
-  }>
-}>
+    title: string;
+    icon: React.ReactNode;
+    onSelect: () => void | Promise<void>;
+  }>;
+}>;
 
 const CommandMenu = () => {
-  const [open, setOpen] = React.useState(false)
-  const [copy] = useCopyToClipboard()
+  const [open, setOpen] = React.useState(false);
+  const [copy] = useCopyToClipboard();
 
   const openLink = React.useCallback((url: string) => {
-    setOpen(false)
-    window.open(url, '_blank', 'noopener noreferrer')
-  }, [])
+    setOpen(false);
+    window.open(url, '_blank', 'noopener noreferrer');
+  }, []);
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        setOpen((open) => !open)
+        e.preventDefault();
+        setOpen((open) => !open);
       }
-    }
-    document.addEventListener('keydown', down)
-    return () => document.removeEventListener('keydown', down)
-  }, [])
+    };
+    document.addEventListener('keydown', down);
+    return () => document.removeEventListener('keydown', down);
+  }, []);
 
   const groups: Groups = [
     {
@@ -51,7 +52,7 @@ const CommandMenu = () => {
           title: 'Copy link',
           icon: <Link className="mr-3 size-4" />,
           onSelect: async () => {
-            setOpen(false)
+            setOpen(false);
 
             await copy({
               text: window.location.href,
@@ -63,7 +64,7 @@ const CommandMenu = () => {
                   </div>
                 </div>
               ),
-            })
+            });
           },
         },
       ],
@@ -93,7 +94,7 @@ const CommandMenu = () => {
         },
       ],
     },
-  ]
+  ];
 
   return (
     <>
@@ -133,7 +134,7 @@ const CommandMenu = () => {
         </CommandList>
       </CommandDialog>
     </>
-  )
-}
+  );
+};
 
-export default CommandMenu
+export default CommandMenu;
