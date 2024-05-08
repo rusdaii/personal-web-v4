@@ -6,8 +6,8 @@ import { Separator } from '@/components/ui/separator'
 
 import ThemeSwitch from '../ThemeSwitch'
 import CommandMenu from './CommandMenu'
-import NavigationLink from './NavigationLink'
 import MobileNav from './MobileNav'
+import NavigationLink from './NavigationLink'
 
 const Navbar = () => {
   return (
