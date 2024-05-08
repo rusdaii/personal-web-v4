@@ -11,7 +11,7 @@ import { urlForOpenGraphImage } from '@/sanity/lib/utils';
 import { loadHomePage, loadSettings } from '@/sanity/loader/loadQuery';
 
 const LiveVisualEditing = dynamic(
-  () => import('@/sanity/loader/LiveVisualEditing'),
+  () => import('@/sanity/loader/LiveVisualEditing')
 );
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -44,14 +44,14 @@ export const viewport: Viewport = {
 export default async function IndexRoute({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <>
       <Suspense>
         <Navbar />
       </Suspense>
-      <main className="flex flex-grow py-24 min-h-screen flex-col container">
+      <main className="container flex flex-col flex-grow min-h-screen py-24 px-5 sm:px-8">
         <Suspense>{children}</Suspense>
       </main>
       {/* <Suspense>
