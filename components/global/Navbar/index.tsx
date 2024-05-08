@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import ThemeSwitch from '@/components/global/ThemeSwitch';
@@ -46,7 +47,16 @@ const Navbar = () => {
         duration: 0.3,
       }}
     >
-      <Link href="/">Logo</Link>
+      <Link href="/">
+        <span className="sr-only">Homepage</span>
+        <Image
+          src="/images/logo.png"
+          alt="rusdaii logo"
+          width={100}
+          height={100}
+          className="rounded-full w-7 h-7 md:w-9 md:h-9"
+        />
+      </Link>
       <div className="flex items-center gap-2">
         <NavigationLink />
         <Separator orientation="vertical" className="h-6" />
