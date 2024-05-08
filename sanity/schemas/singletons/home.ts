@@ -1,5 +1,5 @@
-import { HomeIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { HomeIcon } from '@sanity/icons';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'home',
@@ -58,6 +58,14 @@ export default defineType({
       validation: (rule) => rule.max(155).required(),
     }),
     defineField({
+      name: 'logo',
+      title: 'Logo',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'showcaseProjects',
       title: 'Showcase projects',
       description:
@@ -79,7 +87,7 @@ export default defineType({
       return {
         subtitle: 'Home',
         title,
-      }
+      };
     },
   },
-})
+});
