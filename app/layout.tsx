@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import { GeistSans } from 'geist/font/sans'
 
 import Providers from '@/components/global/Providers'
+import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
 
 export default async function RootLayout({
@@ -14,10 +15,11 @@ export default async function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${GeistSans.variable}`}
+      className={`${GeistSans.variable} scroll-smooth`}
     >
-      <body className={cn(' antialiased')}>
+      <body className={cn('antialiased')}>
         <Providers>{children}</Providers>
+        <Toaster />
       </body>
     </html>
   )

@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from 'next'
 import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
+import Image from 'next/image'
 import { toPlainText } from 'next-sanity'
 import { Suspense } from 'react'
 
+import Navbar from '@/components/global/Navbar'
 import { urlForOpenGraphImage } from '@/sanity/lib/utils'
 import { loadHomePage, loadSettings } from '@/sanity/loader/loadQuery'
 
@@ -45,17 +47,35 @@ export default async function IndexRoute({
 }) {
   return (
     <>
-      <div className="flex min-h-screen flex-col">
-        {/* <Suspense>
-          <Navbar />
-        </Suspense> */}
-        <div className="mt-20 flex-grow px-4 md:px-16 lg:px-32">
-          <Suspense>{children}</Suspense>
-        </div>
-        {/* <Suspense>
+      <Suspense>
+        <Navbar />
+      </Suspense>
+      <main className="flex flex-grow py-24 min-h-screen flex-col container">
+        <Suspense>{children}</Suspense>
+      </main>
+      {/* <Suspense>
           <Footer />
         </Suspense> */}
-      </div>
+
+      <Image
+        width={1512}
+        height={550}
+        className="absolute left-1/2 top-0 -z-10 -translate-x-1/2"
+        src="/images/gradient-background-top.png"
+        alt=""
+        role="presentation"
+        priority
+      />
+      <Image
+        width={1512}
+        height={447}
+        className="absolute -bottom-6 left-1/2 -z-10 -translate-x-1/2"
+        src="/images/gradient-background-bottom.png"
+        alt=""
+        role="presentation"
+        priority
+      />
+
       {draftMode().isEnabled && <LiveVisualEditing />}
     </>
   )

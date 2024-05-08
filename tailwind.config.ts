@@ -1,21 +1,19 @@
 import type { Config } from 'tailwindcss'
-const { theme } = require('@sanity/demo/tailwind')
 
 const config = {
   darkMode: ['class'],
   content: ['./components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}'],
   prefix: '',
   theme: {
-    ...theme,
     fontFamily: {
       sans: ['var(--font-geist-sans)'],
       mono: ['var(--font-geist-mono)'],
     },
     container: {
       center: true,
-      padding: '2rem',
+      padding: '1rem',
       screens: {
-        '2xl': '1400px',
+        '2xl': '1024px',
       },
     },
     extend: {
@@ -72,6 +70,12 @@ const config = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+      backgroundImage: {
+        'nav-link-indicator':
+          'radial-gradient(44.6% 825% at 50% 50%, rgb(255 133 133) 0%, rgb(255 72 109 / 0) 100%)',
+        'nav-link-indicator-dark':
+          'radial-gradient(44.6% 825% at 50% 50%, rgb(255 28 28) 0%, rgb(255 72 109 / 0) 100%)',
       },
     },
   },
