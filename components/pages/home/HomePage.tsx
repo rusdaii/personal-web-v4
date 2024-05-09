@@ -1,5 +1,6 @@
 import type { EncodeDataAttributeCallback } from '@sanity/react-loader';
 
+import AboutMe from '@/components/parts/Home/AboutMe';
 import Hero from '@/components/parts/Home/Hero';
 import ShowcaseProjects from '@/components/parts/Home/ShowcaseProjects';
 import type { HomePagePayload } from '@/types';
@@ -21,6 +22,8 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
         projects={showcaseProjects}
         encodeDataAttribute={encodeDataAttribute}
       />
+
+      <AboutMe />
     </div>
   );
 }

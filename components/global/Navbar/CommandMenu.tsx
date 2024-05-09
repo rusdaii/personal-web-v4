@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Github, Linkedin, Twitter } from '@styled-icons/boxicons-logos';
+import { SiGithub, SiLinkedin, SiX } from '@icons-pack/react-simple-icons';
 import { Command, Link } from '@styled-icons/boxicons-regular';
 
 import { Button } from '@/components/ui/button';
@@ -74,17 +74,17 @@ const CommandMenu = () => {
       actions: [
         {
           title: 'Github',
-          icon: <Github className="mr-3 size-4" />,
+          icon: <SiGithub className="mr-3 size-4" />,
           onSelect: () => openLink('https://github.com/rusdaii'),
         },
         {
           title: 'Twitter',
-          icon: <Twitter className="mr-3 size-4" />,
+          icon: <SiX className="mr-3 size-4" />,
           onSelect: () => openLink('https://twitter.com/rusdaii'),
         },
         {
           title: 'LinkedIn',
-          icon: <Linkedin className="mr-3 size-4" />,
+          icon: <SiLinkedin className="mr-3 size-4" />,
           onSelect: () => openLink('https://www.linkedin.com/in/rusdaii'),
         },
         {
