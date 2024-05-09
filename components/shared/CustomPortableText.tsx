@@ -6,14 +6,13 @@ import {
 import type { Image } from 'sanity';
 
 import ImageBox from '@/components/shared/ImageBox';
-import { TimelineSection } from '@/components/shared/TimelineSection';
 
 export function CustomPortableText({
   paragraphClasses,
   value,
 }: {
-  paragraphClasses?: string
-  value: PortableTextBlock[]
+  paragraphClasses?: string;
+  value: PortableTextBlock[];
 }) {
   const components: PortableTextComponents = {
     block: {
@@ -38,7 +37,7 @@ export function CustomPortableText({
       image: ({
         value,
       }: {
-        value: Image & { alt?: string; caption?: string }
+        value: Image & { alt?: string; caption?: string };
       }) => {
         return (
           <div className="my-6 space-y-2">
@@ -54,10 +53,6 @@ export function CustomPortableText({
             )}
           </div>
         );
-      },
-      timeline: ({ value }) => {
-        const { items } = value || {};
-        return <TimelineSection timelines={items} />;
       },
     },
   };
