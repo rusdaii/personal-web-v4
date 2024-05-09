@@ -20,6 +20,14 @@ type SocialLinks = Array<{
   icon: IconType;
 }>;
 
+type FooterLinks = Array<{
+  id: number;
+  links: Array<{
+    href: string;
+    text: string;
+  }>;
+}>;
+
 export const NAVIGATION_LINKS: NavigationLinks = [
   {
     icon: <HomeIcon className="size-4" />,
@@ -63,5 +71,63 @@ export const SOCIAL_LINKS: SocialLinks = [
     href: 'https://x.com/rusdaii',
     title: 'X',
     icon: SiX,
+  },
+];
+
+export const FOOTER_LINKS: FooterLinks = [
+  {
+    id: 1,
+    links: [
+      {
+        href: '/',
+        text: 'Home',
+      },
+      {
+        href: '/blog',
+        text: 'Blog',
+      },
+      {
+        href: '/about',
+        text: 'About',
+      },
+    ],
+  },
+  {
+    id: 2,
+    links: [
+      {
+        href: '/guestbook',
+        text: 'Guestbook',
+      },
+      {
+        href: '/uses',
+        text: 'Uses',
+      },
+      {
+        href: '/projects',
+        text: 'Projects',
+      },
+    ],
+  },
+  {
+    id: 3,
+    links: [
+      {
+        href: 'https://linkedin.com/in/rusdaii/',
+        text: 'LinkedIn',
+      },
+      {
+        href: 'https://github.com/rusdaii',
+        text: 'GitHub',
+      },
+      {
+        href: 'https://www.instagram.com/rusdaii/',
+        text: 'Instagram',
+      },
+      {
+        href: 'mailto:rusdaii.html@gmail.com',
+        text: 'Email',
+      },
+    ],
   },
 ];

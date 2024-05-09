@@ -6,6 +6,7 @@ import { draftMode } from 'next/headers';
 import Image from 'next/image';
 import { toPlainText } from 'next-sanity';
 
+import Footer from '@/components/global/Footer';
 import Navbar from '@/components/global/Navbar';
 import { urlForOpenGraphImage } from '@/sanity/lib/utils';
 import { loadHomePage, loadSettings } from '@/sanity/loader/loadQuery';
@@ -54,9 +55,9 @@ export default async function IndexRoute({
       <main className="container flex flex-col flex-grow min-h-screen py-24 px-5 sm:px-8">
         <Suspense>{children}</Suspense>
       </main>
-      {/* <Suspense>
-          <Footer />
-        </Suspense> */}
+      <Suspense>
+        <Footer />
+      </Suspense>
 
       <Image
         width={1512}
