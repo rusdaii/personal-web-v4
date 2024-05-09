@@ -17,8 +17,6 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
 
   return (
     <div className="space-y-20">
-      {/* Header */}
-
       <Hero description={overview} image={logo} />
       {/* Showcase projects */}
       {showcaseProjects && showcaseProjects.length > 0 && (

@@ -40,7 +40,7 @@ const Hero: React.FC<HeroProps> = ({ description, image }) => {
                   {description[0].children[0].text}
                 </h1>
                 <h2 className="bg-gradient-to-b from-black via-black/90 to-black/70 to-90% bg-clip-text font-calsans text-2xl font-bold leading-9 text-transparent dark:from-white dark:via-white/90 dark:to-white/70 sm:text-4xl sm:leading-[3.5rem]">
-                  I like coding so bad and harware geeks too.
+                  I like coding so bad and hardware geeks too.
                 </h2>
               </span>
 
