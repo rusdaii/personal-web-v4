@@ -44,7 +44,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <div>
             <CustomPortableText
               value={overview as PortableTextBlock[]}
-              paragraphClasses="mt-2 !text-zinc-100 dark:!text-muted-foreground"
+              paragraphClasses="mt-2 dark:!text-muted-foreground"
             />
           </div>
         </div>
