@@ -1,7 +1,8 @@
 import type { EncodeDataAttributeCallback } from '@sanity/react-loader';
+const GetInTouch = dynamic(() => import('@/components/parts/Home/GetInTouch'));
+const AboutMe = dynamic(() => import('@/components/parts/Home/AboutMe'));
+import dynamic from 'next/dynamic';
 
-import AboutMe from '@/components/parts/Home/AboutMe';
-import GetInTouch from '@/components/parts/Home/GetInTouch';
 import Hero from '@/components/parts/Home/Hero';
 import ShowcaseProjects from '@/components/parts/Home/ShowcaseProjects';
 import type { HomePagePayload } from '@/types';
