@@ -1,12 +1,22 @@
+import React from 'react';
+
 import { CustomPortableText } from '@/components/shared/CustomPortableText';
+import { cn } from '@/lib/utils';
 
 interface HeaderProps {
-  centered?: boolean
-  description?: any[]
-  title?: string
+  centered?: boolean;
+  description?: any[];
+  title?: string;
+  headingClasses?: string;
+  descriptionClasses?: string;
 }
-export function Header(props: HeaderProps) {
-  const { title, description, centered = false } = props;
+export const Header: React.FC<HeaderProps> = ({
+  title,
+  description,
+  centered = false,
+  headingClasses,
+  descriptionClasses,
+}) => {
   if (!description && !title) {
     return null;
   }
@@ -14,16 +24,19 @@ export function Header(props: HeaderProps) {
     <div className={`${centered ? 'text-center' : 'w-5/6 lg:w-3/5'}`}>
       {/* Title */}
       {title && (
-        <h1 className="text-3xl font-extrabold tracking-tight md:text-5xl">
+        <h1 className={cn('text-3xl font-bold tracking-tight', headingClasses)}>
           {title}
         </h1>
       )}
       {/* Description */}
       {description && (
-        <div className="mt-4 font-serif text-xl md:text-2xl">
-          <CustomPortableText value={description} />
+        <div className="mt-2">
+          <CustomPortableText
+            value={description}
+            paragraphClasses={descriptionClasses}
+          />
         </div>
       )}
     </div>
   );
-}
+};

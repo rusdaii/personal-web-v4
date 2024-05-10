@@ -73,6 +73,11 @@ export default defineType({
       type: 'url',
     }),
     defineField({
+      name: 'source',
+      title: 'Source Code',
+      type: 'url',
+    }),
+    defineField({
       name: 'tags',
       title: 'Tags',
       type: 'array',

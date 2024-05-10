@@ -25,15 +25,11 @@ export interface AboutPagePayload {
 }
 
 export interface ProjectPayload {
-  client?: string;
   coverImage?: Image;
   description?: PortableTextBlock[];
-  duration?: {
-    start?: string;
-    end?: string;
-  };
   overview?: PortableTextBlock[];
   site?: string;
+  source?: string;
   slug: string;
   tags?: string[];
   title?: string;

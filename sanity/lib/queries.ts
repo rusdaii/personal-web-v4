@@ -27,12 +27,11 @@ export const aboutPageQuery = groq`
 export const projectBySlugQuery = groq`
   *[_type == "project" && slug.current == $slug][0] {
     _id,
-    client,
     coverImage,
     description,
-    duration,
     overview,
     site,
+    source,
     "slug": slug.current,
     tags,
     title,
@@ -41,12 +40,6 @@ export const projectBySlugQuery = groq`
 
 export const settingsQuery = groq`
   *[_type == "settings"][0]{
-    footer,
-    menuItems[]->{
-      _type,
-      "slug": slug.current,
-      title
-    },
     ogImage,
   }
 `;
