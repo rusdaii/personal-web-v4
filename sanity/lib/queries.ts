@@ -16,6 +16,23 @@ export const homePageQuery = groq`
     logo,
   }
 `;
+
+export const projectsPageQuery = groq`
+  *[_type == "projects"][0]{
+    _id,
+    title,
+    overview,
+    projectsList[]->{
+      _type,
+      coverImage,
+      overview,
+      "slug": slug.current,
+      tags,
+      title,
+    },
+  }
+  `;
+
 export const aboutPageQuery = groq`
   *[_type == "about"][0]{
     _id,

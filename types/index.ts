@@ -10,6 +10,8 @@ export interface ShowcaseProject {
   title?: string;
 }
 
+export interface ProjectList extends Array<ShowcaseProject> {}
+
 // Page payloads
 
 export interface HomePagePayload {
@@ -17,6 +19,12 @@ export interface HomePagePayload {
   showcaseProjects?: ShowcaseProject[];
   title?: string;
   logo?: Image;
+}
+
+export interface ProjectsPagePayload {
+  title?: string;
+  overview?: PortableTextBlock[];
+  projectsList?: ProjectList;
 }
 
 export interface AboutPagePayload {
