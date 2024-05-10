@@ -15,12 +15,16 @@ const StackCard = () => {
       </div>
       <Marquee gap="20px" className="py-4" fade pauseOnHover>
         {TECH_STACKS.map((stack) => (
-          <span key={stack.name}>{stack.icon}</span>
+          <span key={stack.name} className="size-10">
+            {stack.icon}
+          </span>
         ))}
       </Marquee>
       <Marquee gap="20px" className="py-4" reverse fade pauseOnHover>
         {TOOL_STACKS.map((stack) => (
-          <span key={stack.name}>{stack.icon}</span>
+          <span key={stack.name} className="size-10">
+            {stack.icon}
+          </span>
         ))}
       </Marquee>
     </div>
