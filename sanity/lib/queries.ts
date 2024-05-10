@@ -22,7 +22,7 @@ export const projectsPageQuery = groq`
     _id,
     title,
     overview,
-    projectsList[]->{
+    projectsList[]-> | order(_createdAt desc){
       _type,
       coverImage,
       overview,
