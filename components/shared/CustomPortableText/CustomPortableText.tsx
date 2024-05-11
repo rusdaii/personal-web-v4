@@ -1,3 +1,7 @@
+import './style.css';
+
+import React from 'react';
+
 import {
   PortableText,
   type PortableTextBlock,
@@ -7,17 +11,29 @@ import type { Image } from 'sanity';
 
 import ImageBox from '@/components/shared/ImageBox';
 
-export function CustomPortableText({
-  paragraphClasses,
-  value,
-}: {
+type CustomPortableTextProps = {
   paragraphClasses?: string;
   value: PortableTextBlock[];
-}) {
+};
+
+export const CustomPortableText: React.FC<CustomPortableTextProps> = ({
+  paragraphClasses,
+  value,
+}) => {
   const components: PortableTextComponents = {
     block: {
       normal: ({ children }) => {
         return <p className={paragraphClasses}>{children}</p>;
+      },
+      h2: ({ children }) => {
+        return (
+          <h2 className="text-2xl font-bold !text-foreground py-5">
+            {children}
+          </h2>
+        );
+      },
+      bullet: ({ children }) => {
+        return <ul className="list-disc">{children}</ul>;
       },
     },
     marks: {
@@ -58,4 +74,4 @@ export function CustomPortableText({
   };
 
   return <PortableText components={components} value={value} />;
-}
+};

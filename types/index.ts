@@ -30,6 +30,7 @@ export interface ProjectsPagePayload {
 export interface AboutPagePayload {
   overview?: PortableTextBlock[];
   title?: string;
+  aboutMe?: PortableTextBlock[];
 }
 
 export interface ProjectPayload {

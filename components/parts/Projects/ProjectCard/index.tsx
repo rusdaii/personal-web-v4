@@ -4,7 +4,7 @@ import { EncodeDataAttributeCallback } from '@sanity/react-loader';
 import Link from 'next/link';
 import { PortableTextBlock } from 'next-sanity';
 
-import { CustomPortableText } from '@/components/shared/CustomPortableText';
+import { CustomPortableText } from '@/components/shared/CustomPortableText/CustomPortableText';
 import { BlurImage } from '@/components/ui/blurImage';
 import { urlForImage } from '@/sanity/lib/utils';
 import { ShowcaseProject } from '@/types';

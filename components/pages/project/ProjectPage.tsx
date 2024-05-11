@@ -2,7 +2,7 @@ import type { EncodeDataAttributeCallback } from '@sanity/react-loader';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-import { CustomPortableText } from '@/components/shared/CustomPortableText';
+import { CustomPortableText } from '@/components/shared/CustomPortableText/CustomPortableText';
 import { Header } from '@/components/shared/Header';
 import RevealHeader from '@/components/shared/RevealHeader';
 import { BlurImage } from '@/components/ui/blurImage';

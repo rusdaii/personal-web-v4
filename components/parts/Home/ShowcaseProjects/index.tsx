@@ -7,7 +7,7 @@ import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { PortableTextBlock } from 'next-sanity';
 
-import { CustomPortableText } from '@/components/shared/CustomPortableText';
+import { CustomPortableText } from '@/components/shared/CustomPortableText/CustomPortableText';
 import { BlurImage } from '@/components/ui/blurImage';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';

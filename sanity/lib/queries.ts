@@ -38,6 +38,7 @@ export const aboutPageQuery = groq`
     _id,
     overview,
     title,
+    aboutMe,
   }
 `;
 

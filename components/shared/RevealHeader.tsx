@@ -3,9 +3,12 @@ import React from 'react';
 
 import { LazyMotion, domAnimation, m } from 'framer-motion';
 
+import { cn } from '@/lib/utils';
+
 type RevealHeaderProps = {
   children: React.ReactNode;
   transitionDelay?: number;
+  className?: string;
 };
 
 const animation = {
@@ -22,6 +25,7 @@ const animation = {
 const RevealHeader: React.FC<RevealHeaderProps> = ({
   children,
   transitionDelay,
+  className,
 }) => {
   return (
     <LazyMotion features={domAnimation}>
@@ -29,6 +33,7 @@ const RevealHeader: React.FC<RevealHeaderProps> = ({
         initial={animation.hide}
         animate={animation.show}
         transition={{ delay: transitionDelay }}
+        className={cn(className)}
       >
         {children}
       </m.div>

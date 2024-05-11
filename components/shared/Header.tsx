@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CustomPortableText } from '@/components/shared/CustomPortableText';
+import { CustomPortableText } from '@/components/shared/CustomPortableText/CustomPortableText';
 import { cn } from '@/lib/utils';
 
 interface HeaderProps {

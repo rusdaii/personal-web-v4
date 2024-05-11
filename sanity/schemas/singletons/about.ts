@@ -1,5 +1,5 @@
-import { UserIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { UserIcon } from '@sanity/icons';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'about',
@@ -55,47 +55,12 @@ export default defineType({
       ],
       validation: (rule) => rule.max(155).required(),
     }),
+
     defineField({
-      name: 'photo',
-      title: 'Photo',
-      type: 'image',
-    }),
-    defineField({
-      name: 'skills',
-      title: 'Skills',
+      name: 'aboutMe',
+      title: 'About Me',
       type: 'array',
-      of: [
-        {
-          type: 'string',
-        },
-      ],
-    }),
-    defineField({
-      name: 'contact',
-      title: 'Contact',
-      type: 'array',
-      of: [
-        {
-          type: 'object',
-          fields: [
-            {
-              name: 'icon',
-              title: 'Icon',
-              type: 'string',
-            },
-            {
-              name: 'text',
-              title: 'Text',
-              type: 'string',
-            },
-            {
-              name: 'link',
-              title: 'Link',
-              type: 'url',
-            },
-          ],
-        },
-      ],
+      of: [{ type: 'block' }],
     }),
   ],
-})
+});
