@@ -15,8 +15,6 @@ export interface AboutPageProps {
 const AboutPage: FC<AboutPageProps> = ({ data }) => {
   const { overview = [], title = '', aboutMe } = data ?? {};
 
-  console.table(aboutMe);
-
   return (
     <div>
       {title && (
