@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import type { Metadata, Viewport } from 'next';
 import dynamic from 'next/dynamic';
 import { draftMode } from 'next/headers';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { toPlainText } from 'next-sanity';
 
 import Navbar from '@/components/global/Navbar';
@@ -52,31 +52,12 @@ export default async function IndexRoute({
       <Suspense>
         <Navbar />
       </Suspense>
-      <main className="container flex flex-col flex-grow min-h-screen py-24 px-5 sm:px-8">
+      <main className="container land flex flex-col flex-grow min-h-screen py-24 px-5 sm:px-8">
         <Suspense>{children}</Suspense>
       </main>
       <Suspense>
         <Footer />
       </Suspense>
-
-      <Image
-        width={1512}
-        height={550}
-        className="absolute left-1/2 top-0 -z-10 -translate-x-1/2"
-        src="/images/gradient-background-top.png"
-        alt=""
-        role="presentation"
-        priority
-      />
-      <Image
-        width={1512}
-        height={447}
-        className="absolute -bottom-6 left-1/2 -z-10 -translate-x-1/2"
-        src="/images/gradient-background-bottom.png"
-        alt=""
-        role="presentation"
-        priority
-      />
 
       {draftMode().isEnabled && <LiveVisualEditing />}
     </>
