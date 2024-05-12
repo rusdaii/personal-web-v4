@@ -96,10 +96,6 @@ export const FOOTER_LINKS: FooterLinks = [
     id: 2,
     links: [
       {
-        href: '/guestbook',
-        text: 'Guestbook',
-      },
-      {
         href: '/uses',
         text: 'Uses',
       },
