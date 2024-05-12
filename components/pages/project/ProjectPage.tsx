@@ -91,7 +91,6 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
           />
         )}
       </div>
-      <div className="absolute left-0 w-screen border-t" />
     </div>
   );
 }
