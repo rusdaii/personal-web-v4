@@ -3,9 +3,12 @@
 import { Link } from '@/components/shared/Link';
 import { FOOTER_LINKS } from '@/lib/constants/links';
 
+import SpotifyNowPlaying from './SpotifyNowPlaying';
+
 const Footer = () => {
   return (
     <footer className="relative mx-auto mb-6 flex max-w-5xl flex-col rounded-2xl bg-background/30 p-8 shadow-sm saturate-100 backdrop-blur-[10px]">
+      <SpotifyNowPlaying />
       <div className="mt-12 grid grid-cols-2 sm:grid-cols-3">
         {FOOTER_LINKS.map((list) => (
           <div
