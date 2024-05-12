@@ -136,12 +136,16 @@ const CardProps: React.FC<CardProps> = ({ project, encodeDataAttribute }) => {
           className="rounded-lg object-cover"
         />
       )}
-      <div className="absolute bottom-6 left-7 flex flex-col transition-[left] ease-out group-hover:left-[30px]">
-        <h3 className="font-title text-2xl font-bold text-white">{title}</h3>
-        <CustomPortableText
-          value={overview as PortableTextBlock[]}
-          paragraphClasses="mt-2 !text-zinc-100 dark:!text-muted-foreground"
-        />
+      <div className="flex-1 px-2 py-4">
+        <div className="space-y-2">
+          <h2 className="text-2xl font-bold">{title}</h2>
+          <div>
+            <CustomPortableText
+              value={overview as PortableTextBlock[]}
+              paragraphClasses="mt-2 dark:!text-muted-foreground"
+            />
+          </div>
+        </div>
       </div>
     </Link>
   );
