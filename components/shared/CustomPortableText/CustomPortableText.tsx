@@ -1,5 +1,3 @@
-import './style.css';
-
 import React from 'react';
 
 import {
@@ -31,9 +29,6 @@ export const CustomPortableText: React.FC<CustomPortableTextProps> = ({
             {children}
           </h2>
         );
-      },
-      bullet: ({ children }) => {
-        return <ul className="list-disc">{children}</ul>;
       },
     },
     marks: {
@@ -70,6 +65,12 @@ export const CustomPortableText: React.FC<CustomPortableTextProps> = ({
           </div>
         );
       },
+    },
+    list: ({ children }) => {
+      return <ul className="list-disc px-8">{children}</ul>;
+    },
+    listItem: ({ children }) => {
+      return <li className="pb-4">{children}</li>;
     },
   };
 
