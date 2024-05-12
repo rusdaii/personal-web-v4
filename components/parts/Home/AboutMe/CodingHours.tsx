@@ -7,7 +7,9 @@ import { fetcher } from '@/lib/fetcher';
 import { type Wakatime } from '@/types/api';
 
 const CodingHours = () => {
-  const { data: wakatimeData } = useSWR<Wakatime>('/api/wakatime', fetcher);
+  const { data: wakatimeData } = useSWR<Wakatime>('/api/wakatime', fetcher, {
+    refreshInterval: 1000 * 60 * 60 * 5,
+  });
 
   const capturedTime = wakatimeData?.seconds
     ? Math.round(wakatimeData.seconds / 60 / 60) + 1800 // time since using wakatime + time spent before using wakatime
