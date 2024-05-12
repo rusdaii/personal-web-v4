@@ -84,9 +84,9 @@ const config = {
       },
       backgroundImage: {
         'nav-link-indicator':
-          'radial-gradient(44.6% 825% at 50% 50%, rgb(255 133 133) 0%, rgb(255 72 109 / 0) 100%)',
+          'radial-gradient(44.6% 825% at 50% 50%, rgb(255, 0, 153) 0%, rgb(255 72 109 / 0) 100%)',
         'nav-link-indicator-dark':
-          'radial-gradient(44.6% 825% at 50% 50%, rgb(255 28 28) 0%, rgb(255 72 109 / 0) 100%)',
+          'radial-gradient(44.6% 825% at 50% 50%, rgb(168, 85, 247) 0%, rgb(255 72 109 / 0) 100%)',
       },
       boxShadow: {
         'feature-card': '0 -1px 3px 0 rgb(0 0 0 / 0.05)',
