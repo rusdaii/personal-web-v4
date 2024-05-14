@@ -42,6 +42,14 @@ export const aboutPageQuery = groq`
   }
 `;
 
+export const slugProjectsQuery = groq`
+  *[_type == "project"]{
+    _id,
+    "slug": slug.current,
+    _updatedAt,
+  }
+  `;
+
 export const projectBySlugQuery = groq`
   *[_type == "project" && slug.current == $slug][0] {
     _id,

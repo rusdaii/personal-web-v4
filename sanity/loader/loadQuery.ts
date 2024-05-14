@@ -10,6 +10,7 @@ import {
   projectBySlugQuery,
   projectsPageQuery,
   settingsQuery,
+  slugProjectsQuery,
 } from '@/sanity/lib/queries';
 import { token } from '@/sanity/lib/token';
 import {
@@ -17,6 +18,7 @@ import {
   HomePagePayload,
   ProjectPayload,
   SettingsPayload,
+  SlugProjectsQuery,
 } from '@/types';
 
 const serverClient = client.withConfig({
@@ -101,4 +103,8 @@ export function loadProject(slug: string) {
     { slug },
     { next: { tags: [`project:${slug}`] } }
   );
+}
+
+export function loadProjects() {
+  return loadQuery<SlugProjectsQuery[]>(slugProjectsQuery);
 }

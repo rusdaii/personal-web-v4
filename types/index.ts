@@ -44,6 +44,11 @@ export interface ProjectPayload {
   title?: string;
 }
 
+export interface SlugProjectsQuery {
+  slug: string;
+  _updatedAt: string;
+}
+
 export interface SettingsPayload {
   ogImage?: Image;
 }
