@@ -3,7 +3,7 @@ import React from 'react';
 
 import { EncodeDataAttributeCallback } from '@sanity/react-loader';
 import { RightArrowAlt, Code } from '@styled-icons/boxicons-regular';
-import { motion, useInView } from 'framer-motion';
+import { m, useInView, LazyMotion, domAnimation } from 'framer-motion';
 import Link from 'next/link';
 import { PortableTextBlock } from 'next-sanity';
 
@@ -43,68 +43,70 @@ const ShowcaseProjects: React.FC<ShowCaseProjectProps> = ({
   const isInView = useInView(projectsRef, { once: true, margin: '-100px' });
 
   return (
-    <motion.section
-      initial="initial"
-      animate={isInView ? 'animate' : 'initial'}
-      variants={variants}
-      ref={projectsRef}
-      transition={{
-        duration: 0.5,
-      }}
-      className="relative my-24 will-change-[transform,opacity]"
-    >
-      <motion.h1
-        className="text-center font-calsans text-3xl font-bold sm:text-4xl"
-        initial={{
-          y: 30,
-          opacity: 0,
-        }}
-        animate={{
-          y: 0,
-          opacity: 1,
-        }}
+    <LazyMotion features={domAnimation}>
+      <m.section
+        initial="initial"
+        animate={isInView ? 'animate' : 'initial'}
+        variants={variants}
+        ref={projectsRef}
         transition={{
-          duration: 0.3,
+          duration: 0.5,
         }}
+        className="relative my-24 will-change-[transform,opacity]"
       >
-        Featured Projects
-      </motion.h1>
-      <motion.div
-        className="mt-12 grid gap-4 md:grid-cols-2"
-        initial={{
-          y: 40,
-          opacity: 0,
-        }}
-        animate={{
-          y: 0,
-          opacity: 1,
-        }}
-        transition={{
-          duration: 0.3,
-        }}
-      >
-        {projects.map((project) => (
-          <CardProps
-            key={project.slug}
-            project={project}
-            encodeDataAttribute={encodeDataAttribute}
-          />
-        ))}
-      </motion.div>
-      <div className="my-8 flex items-center justify-center">
-        <Link
-          href="/projects"
-          className={cn(
-            buttonVariants({
-              variant: 'outline',
-            }),
-            'rounded-xl'
-          )}
+        <m.h1
+          className="text-center font-calsans text-3xl font-bold sm:text-4xl"
+          initial={{
+            y: 30,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.3,
+          }}
         >
-          See all project
-        </Link>
-      </div>
-    </motion.section>
+          Featured Projects
+        </m.h1>
+        <m.div
+          className="mt-12 grid gap-4 md:grid-cols-2"
+          initial={{
+            y: 40,
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.3,
+          }}
+        >
+          {projects.map((project) => (
+            <CardProps
+              key={project.slug}
+              project={project}
+              encodeDataAttribute={encodeDataAttribute}
+            />
+          ))}
+        </m.div>
+        <div className="my-8 flex items-center justify-center">
+          <Link
+            href="/projects"
+            className={cn(
+              buttonVariants({
+                variant: 'outline',
+              }),
+              'rounded-xl'
+            )}
+          >
+            See all project
+          </Link>
+        </div>
+      </m.section>
+    </LazyMotion>
   );
 };
 
