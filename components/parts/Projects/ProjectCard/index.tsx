@@ -37,6 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           alt={title ? title : 'Cover image'}
           className="rounded-lg"
           lazy={false}
+          priority
         />
       )}
       <div className="flex-1 px-2 py-4">
