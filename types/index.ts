@@ -52,3 +52,8 @@ export interface SlugProjectsQuery {
 export interface SettingsPayload {
   ogImage?: Image;
 }
+
+export interface ResumePayload {
+  pdfFile?: File;
+  resumeUrl?: string;
+}

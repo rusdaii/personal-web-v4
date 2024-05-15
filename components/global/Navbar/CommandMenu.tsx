@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { SiGithub, SiLinkedin, SiX } from '@icons-pack/react-simple-icons';
-import { Command, Link } from '@styled-icons/boxicons-regular';
+import { Command, Link, File } from '@styled-icons/boxicons-regular';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -14,6 +14,9 @@ import {
   CommandSeparator,
 } from '@/components/ui/command';
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard';
+import { client } from '@/sanity/lib/client';
+import { resumeQuery } from '@/sanity/lib/queries';
+import { ResumePayload } from '@/types';
 
 type Groups = Array<{
   name: string;
@@ -26,6 +29,7 @@ type Groups = Array<{
 
 const CommandMenu = () => {
   const [open, setOpen] = React.useState(false);
+  const [resume, setResume] = React.useState<string | undefined>('');
   const [copy] = useCopyToClipboard();
 
   const openLink = React.useCallback((url: string) => {
@@ -34,6 +38,14 @@ const CommandMenu = () => {
   }, []);
 
   React.useEffect(() => {
+    const getResume = async () => {
+      const resume: ResumePayload = await client.fetch(resumeQuery);
+
+      setResume(resume.resumeUrl);
+    };
+
+    getResume();
+
     const down = (e: KeyboardEvent) => {
       if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
@@ -66,6 +78,16 @@ const CommandMenu = () => {
               ),
             });
           },
+        },
+      ],
+    },
+    {
+      name: 'Resume',
+      actions: [
+        {
+          title: 'Resume',
+          icon: <File className="mr-3 size-4" />,
+          onSelect: () => openLink(resume || ''),
         },
       ],
     },

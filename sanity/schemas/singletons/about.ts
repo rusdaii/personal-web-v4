@@ -62,5 +62,13 @@ export default defineType({
       type: 'array',
       of: [{ type: 'block' }],
     }),
+    defineField({
+      name: 'pdfFile',
+      type: 'file',
+      options: {
+        accept: 'application/pdf',
+        storeOriginalFilename: true,
+      },
+    }),
   ],
 });

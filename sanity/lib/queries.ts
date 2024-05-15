@@ -69,3 +69,11 @@ export const settingsQuery = groq`
     ogImage,
   }
 `;
+
+export const resumeQuery = groq`
+  *[_type == "about"][0]{
+    _id,
+    pdfFile,
+    "resumeUrl": pdfFile.asset->url
+  }
+  `;
