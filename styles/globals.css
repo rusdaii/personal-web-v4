@@ -93,18 +93,4 @@
   body {
     @apply bg-background text-foreground relative antialiased;
   }
-
-  .land::before {
-    content: '';
-    position: absolute;
-    inset: 0px;
-    z-index: -100;
-    background-image: url('/images/header-gradient.svg'),
-      url('/images/footer-gradient.svg');
-    background-repeat: no-repeat;
-    background-position:
-      center top,
-      center bottom;
-    background-size: 1400px;
-  }
 }
