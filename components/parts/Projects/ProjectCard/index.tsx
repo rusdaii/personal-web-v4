@@ -36,6 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           imageClassName="group-hover:scale-105"
           alt={title ? title : 'Cover image'}
           className="rounded-lg"
+          lazy={false}
         />
       )}
       <div className="flex-1 px-2 py-4">
