@@ -137,7 +137,6 @@ const CardProps: React.FC<CardProps> = ({ project, encodeDataAttribute }) => {
           alt={title ? title : 'Cover image'}
           className="rounded-lg object-cover"
           lazy={false}
-          priority
         />
       )}
       <div className="flex-1 px-2 py-4">
