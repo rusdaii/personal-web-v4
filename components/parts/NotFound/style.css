@@ -1,0 +1,43 @@
+.box {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  background: conic-gradient(
+    from 110deg at 30% -25%,
+    #7f60f9,
+    #6ddcff,
+    #a855f7,
+    #ff0099
+  );
+  filter: blur(95px);
+  transform: translate3d(0px, 4px, -1px);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.astronaut {
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  z-index: 11;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+  animation: astronaut 7s ease-in-out infinite;
+}
+
+@keyframes astronaut {
+  0%,
+  100% {
+    transform: translateY(-10%);
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 1, 1);
+  }
+}
