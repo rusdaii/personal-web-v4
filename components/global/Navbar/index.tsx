@@ -55,6 +55,7 @@ const Navbar = () => {
           width={100}
           height={100}
           className="rounded-full w-7 h-7 md:w-9 md:h-9"
+          priority
         />
       </Link>
       <div className="flex items-center gap-2">
