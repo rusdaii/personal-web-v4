@@ -5,20 +5,14 @@ import { m, LazyMotion, domAnimation } from 'framer-motion';
 import Link from 'next/link';
 import { PortableTextBlock } from 'next-sanity';
 
-import { BlurImage } from '@/components/ui/blurImage';
-import { urlForImage } from '@/sanity/lib/utils';
-
 type HeroProps = {
   description?: PortableTextBlock[];
-  image?: { asset?: any };
 };
 
-const Hero: React.FC<HeroProps> = ({ description, image }) => {
-  const imageUrl = image && urlForImage(image)?.height(256).width(256).url();
-
+const Hero: React.FC<HeroProps> = ({ description }) => {
   return (
-    <section className="space-y-6 md:my-16">
-      <div className="flex flex-col-reverse gap-8 md:flex-row md:justify-between">
+    <section className="container px-5 sm:px-8 space-y-6">
+      <div className="flex justify-center items-center text-center">
         <LazyMotion features={domAnimation}>
           <m.div
             className="flex flex-col gap-4 will-change-[transform,opacity] md:max-w-xl"
@@ -46,7 +40,7 @@ const Hero: React.FC<HeroProps> = ({ description, image }) => {
                 </span>
 
                 <m.div
-                  className="flex items-center gap-3.5 px-2.5"
+                  className="flex justify-center items-center gap-3.5 px-2.5"
                   initial={{
                     x: -50,
                     opacity: 0,
@@ -71,32 +65,6 @@ const Hero: React.FC<HeroProps> = ({ description, image }) => {
                 </m.div>
               </>
             )}
-          </m.div>
-        </LazyMotion>
-        <LazyMotion features={domAnimation}>
-          <m.div
-            className="relative size-20 md:size-28"
-            initial={{
-              scale: 0,
-            }}
-            animate={{
-              scale: 1,
-            }}
-            transition={{
-              duration: 0.3,
-            }}
-          >
-            {imageUrl && (
-              <BlurImage
-                src={imageUrl}
-                alt="logo-image"
-                width={112}
-                height={112}
-                className="rounded-full"
-                lazy={false}
-              />
-            )}
-            <div className="absolute inset-0 -z-10 bg-gradient-to-tl from-purple-700 to-orange-700 opacity-0 blur-2xl md:opacity-50" />
           </m.div>
         </LazyMotion>
       </div>

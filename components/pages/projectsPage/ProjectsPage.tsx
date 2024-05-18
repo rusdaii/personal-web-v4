@@ -19,7 +19,7 @@ const ProjectsPage: React.FC<ProjectsPageProps> = ({
   const { title, overview, projectsList } = data ?? {};
 
   return (
-    <section className="mt-6 sm:mt-12">
+    <section>
       <RevealHeader>
         <Header
           title={title}
