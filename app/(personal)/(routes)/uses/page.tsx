@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 
 const UsesRoute = () => {
   return (
-    <section className="flex flex-col justify-center items-center h-dvh -mt-16">
+    <section className="flex flex-col justify-center items-center h-dvh">
       <Image
         src="/images/ui-design.svg"
         alt="Coding"
